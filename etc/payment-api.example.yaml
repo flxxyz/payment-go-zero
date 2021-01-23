@@ -1,0 +1,69 @@
+# 服务名称
+Name: payment-api
+# 监听地址
+Host: 127.0.0.1
+# 监听端口
+Port: 18818
+# 程序内部调试的控制开关 如(调试log输出)
+Debug: true
+
+# 数据库配置
+DB:
+  Host: 127.0.0.1
+  Port: 3306
+  Username: root
+  Password: 12345678
+  Database: payment
+  Prefix: payment_
+  Chatset: utf8mb4
+
+# 第三方平台回调通知
+Notify:
+  Alipay:
+    App: https://example.com/alipay/app
+    Wap: https://example.com/alipay/wap
+  Wechat:
+    App: https://example.com/wechat/app
+    Wap: https://example.com/wechat/wap
+
+# 支付宝
+Alipay:
+  # 应用私钥
+  AppPrivateKey:
+  # 应用公钥
+  AppPublicKey:
+  # 加密密钥(未使用)
+  EncryptContent:
+  # 支付宝公钥
+  PublicKey:
+  # 支付宝AppId
+  AppId:
+  # 卖家ID
+  SellerId:
+  # 卖家名称
+  SellerName:
+  # 沙盒公钥
+  SandboxPublicKey:
+  # 沙盒AppId
+  SandboxAppId:
+  # 沙盒卖家ID
+  SandboxSellerId:
+  # 沙盒卖家名称
+  SandboxSellerName:
+
+# 微信
+Wechat:
+  # 牛牛成长app应用的AppId
+  NNAPPAppId:
+  # 牛牛成长app应用的AppSecret
+  NNAPPAppSecret:
+  # 牛牛成长小程序的AppId
+  MiniAppId:
+  # 牛牛成长服务号的AppId
+  PublicAppId:
+  # 牛牛成长开放平台AppId
+  OpenAppId:
+  # 商户号
+  MchId:
+  # 商户平台API密钥
+  MchAPIKey:
