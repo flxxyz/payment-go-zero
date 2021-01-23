@@ -23,6 +23,22 @@ service payment-api {
 	@handler PaymentHandler
 	post /getaway(Request) returns (Response);
 	
+	@doc "支付宝App支付回调"
+	@handler AlipayAppHandler
+	post /alipay/app();
+	
+	@doc "支付宝网页支付回调"
+	@handler AlipayWapHandler
+	post /alipay/wap();
+	
+	@doc "微信App支付回调"
+	@handler WechatAppHandler
+	post /wechat/app();
+	
+	@doc "微信网页支付回调"
+	@handler WechatWapHandler
+	post /wechat/wap();
+	
 	@handler Ping
 	get /ping;
 }

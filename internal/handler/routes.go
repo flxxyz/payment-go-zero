@@ -18,6 +18,26 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 				Handler: PaymentHandler(serverCtx),
 			},
 			{
+				Method:  http.MethodPost,
+				Path:    "/alipay/app",
+				Handler: AlipayAppHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/alipay/wap",
+				Handler: AlipayWapHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/wechat/app",
+				Handler: WechatAppHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/wechat/wap",
+				Handler: WechatWapHandler(serverCtx),
+			},
+			{
 				Method:  http.MethodGet,
 				Path:    "/ping",
 				Handler: PingHandler(serverCtx),
