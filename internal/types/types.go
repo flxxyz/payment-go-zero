@@ -2,7 +2,17 @@
 package types
 
 type Request struct {
-	Name string `path:"name,options=you|me"`
+	Service   string `json:"service,options=Alipay|Wechat"` // 第三方服务商
+	Method    string `json:"method,options=App|Wap|Query"`  // 操作场景
+	IP        string `json:"ip"`                            // 终端IP(必须)
+	URL       string `json:"url"`                           // 请求时的当前URL(必须)
+	NotifyURL string `json:"notify_url"`                    // 自定义的回调地址
+	Title     string `json:"title"`                         // 订单标题(必须) 例:"牛牛成长-儿童体适能直播体验课"
+	Amount    int64  `json:"amount"`                        // 订单总金额(必须)
+	OrderId   string `json:"order_id"`                      // 内部订单号(必须)
+	OpenId    string `json:"open_id"`                       // 微信JSAPI使用
+	Debug     bool   `json:"debug,default=false"`           // Todo: 切换成沙盒
+	UID       int64  `json:"uid"`                           // 客户ID
 }
 
 type Response struct {

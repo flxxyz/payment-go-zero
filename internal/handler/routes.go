@@ -13,9 +13,14 @@ func RegisterHandlers(engine *rest.Server, serverCtx *svc.ServiceContext) {
 	engine.AddRoutes(
 		[]rest.Route{
 			{
-				Method:  http.MethodGet,
-				Path:    "/from/:name",
+				Method:  http.MethodPost,
+				Path:    "/getaway",
 				Handler: PaymentHandler(serverCtx),
+			},
+			{
+				Method:  http.MethodGet,
+				Path:    "/ping",
+				Handler: PingHandler(serverCtx),
 			},
 		},
 	)
